@@ -5,10 +5,10 @@
 
 def infinite_sequence():
     """generates a infinite sequence of numbers"""
-    num = 0
+    itr = 0
     while True:
-        yield num
-        num += 1
+        yield itr
+        itr += 1
 
 
 # we call a yielded value by using next() or a for loop
@@ -43,12 +43,12 @@ print(type(example_list))
 
 def infinite_sequence_with_send():
     """generates a infinite sequence of numbers"""
-    num = 0
+    itr = 0
     while True:
-        i = yield num
+        i = yield itr
         if i is not None:
-            num = i
-        num += 1
+            itr = i
+        itr += 1
 
 
 infinite_sequence_with_send_gen = infinite_sequence_with_send()
